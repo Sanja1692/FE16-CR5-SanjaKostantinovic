@@ -20,15 +20,15 @@ class Animal {  //1
         animalShop.push(this);
     }
     startDisplay() {
-        return `<div class="col mx-0">
-                    <div class="card shadow-lg mb-1" id="testtest" style="width: 18rem;">
+        return `<div class="col mx-0 mt-3">
+                    <div class="card shadow-lg mb-1" id="testtest"">
                         <img src="${this.img}" class="card-img-top" alt="...">
                     <div class="card-body p-0">
                         <h5 class="card-title text-center bg-dark text-light p-1">${this.name}</h5>
-                        <p class="card-text">Gender: ${this.gender}</p>
-                        <p class="card-text">Age: ${this.age}</p>
-                        <p class="card-text">Size: ${this.size}</p>
-                        <p class="card-text text-center btn d-flex justify-content-center bg-${this.vaccine?"success":"danger"}">Vaccine ${this.vaccine}</p>`
+                        <p class="card-text ps-2">Gender: ${this.gender}</p>
+                        <p class="card-text ps-2">Age: ${this.age}</p>
+                        <p class="card-text ps-2">Size: ${this.size}</p>
+                        <p class="card-text text-center mb-2 text-light btn rounded-pill d-flex justify-content-center bg-${this.vaccine?"success":"danger"}">Vaccine ${this.vaccine}</p>`
     }
     endDisplay(){
         return `</div>
@@ -59,17 +59,16 @@ class Cat extends Animal {  //2
     }
     startDisplay() {
         return `${super.startDisplay()}
-        <hr>
-        <div class="card-text">
+                <div class="card-text ps-2">
             <p>Breed: ${this.breed} <br> Fur color: ${this.furColor} <br></p>
-            <a href="${this.URLbreed}" class="catlink">More info about the breed</a>
+            <a href="${this.URLbreed}" class="infoLink">More info about the breed</a>
         </div>`;
     }   
 }
 
 new Cat ("Matta", 2, "Male", "medium",  "Images/rusianjpg.jpg", true, "Russian Blue", "Grey", "https://en.wikipedia.org/wiki/Russian_Blue");
-new Cat ("Lilly", 7, "Female", "medium", "Images/mediumcat.jpg", false, "Siamese", "Beige-grey", "https://en.wikipedia.org/wiki/Siamese_cat");
-new Cat ("Leo", 3, "Male", "medium", "Images/sphynx.jpg", true, "Sphynx", "White", "https://en.wikipedia.org/wiki/Sphynx_cat");
+new Cat ("Lilly", 7, "Female", "medium", "Images/siamese.jpg", false, "Siamese", "Beige-grey", "https://en.wikipedia.org/wiki/Siamese_cat");
+new Cat ("Leo", 3, "Male", "medium", "Images/sphynx0.jpg", true, "Sphynx", "White", "https://en.wikipedia.org/wiki/Sphynx_cat");
 
 //child class Dog
 class Dog extends Animal {
@@ -84,8 +83,8 @@ class Dog extends Animal {
 
     startDisplay() {
         return `${super.startDisplay()}
-              <p class="card-text">Breed: ${this.dogBreed}</p>
-              <p class="card-text">Training: ${this.training}</p>
+              <p class="card-text ps-2">Breed: ${this.dogBreed}</p>
+              <p class="card-text ps-2">Training: ${this.training}</p>
             </div>
             </div>
             </div>`
@@ -95,3 +94,10 @@ class Dog extends Animal {
 new Dog ("Rocky", 32, "Male", "big", "Images/samoyed.jpg", true, "Samoyed", "Yes");
 new Dog ("Dobby", 5, "Female", "big", "Images/Labrador.jpg", false, "Labrador", "No");
 new Dog ("Wuk", 3, "Male", "big", "Images/husky.jpg", true, "Husky", "Yes");
+
+function allCard(){
+    animalShop.forEach((value) => {
+        (document.getElementById("row") as HTMLElement).innerHTML += value.display();
+    });
+}
+allCard();

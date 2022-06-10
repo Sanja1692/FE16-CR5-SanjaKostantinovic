@@ -27,7 +27,7 @@ var Animal = /** @class */ (function () {
         animalShop.push(this);
     }
     Animal.prototype.startDisplay = function () {
-        return "<div class=\"col mx-0\">\n                    <div class=\"card shadow-lg mb-1\" id=\"testtest\" style=\"width: 18rem;\">\n                        <img src=\"".concat(this.img, "\" class=\"card-img-top\" alt=\"...\">\n                    <div class=\"card-body p-0\">\n                        <h5 class=\"card-title text-center bg-dark text-light p-1\">").concat(this.name, "</h5>\n                        <p class=\"card-text\">Gender: ").concat(this.gender, "</p>\n                        <p class=\"card-text\">Age: ").concat(this.age, "</p>\n                        <p class=\"card-text\">Size: ").concat(this.size, "</p>\n                        <p class=\"card-text text-center btn d-flex justify-content-center bg-").concat(this.vaccine ? "success" : "danger", "\">Vaccine ").concat(this.vaccine, "</p>");
+        return "<div class=\"col mx-0 mt-3\">\n                    <div class=\"card shadow-lg mb-1\" id=\"testtest\"\">\n                        <img src=\"".concat(this.img, "\" class=\"card-img-top\" alt=\"...\">\n                    <div class=\"card-body p-0\">\n                        <h5 class=\"card-title text-center bg-dark text-light p-1\">").concat(this.name, "</h5>\n                        <p class=\"card-text ps-2\">Gender: ").concat(this.gender, "</p>\n                        <p class=\"card-text ps-2\">Age: ").concat(this.age, "</p>\n                        <p class=\"card-text ps-2\">Size: ").concat(this.size, "</p>\n                        <p class=\"card-text text-center mb-2 text-light btn rounded-pill d-flex justify-content-center bg-").concat(this.vaccine ? "success" : "danger", "\">Vaccine ").concat(this.vaccine, "</p>");
     };
     Animal.prototype.endDisplay = function () {
         return "</div>\n                </div>\n                </div>";
@@ -53,13 +53,13 @@ var Cat = /** @class */ (function (_super) {
         return _this;
     }
     Cat.prototype.startDisplay = function () {
-        return "".concat(_super.prototype.startDisplay.call(this), "\n        <hr>\n        <div class=\"card-text\">\n            <p>Breed: ").concat(this.breed, " <br> Fur color: ").concat(this.furColor, " <br></p>\n            <a href=\"").concat(this.URLbreed, "\" class=\"catlink\">More info about the breed</a>\n        </div>");
+        return "".concat(_super.prototype.startDisplay.call(this), "\n                <div class=\"card-text ps-2\">\n            <p>Breed: ").concat(this.breed, " <br> Fur color: ").concat(this.furColor, " <br></p>\n            <a href=\"").concat(this.URLbreed, "\" class=\"infoLink\">More info about the breed</a>\n        </div>");
     };
     return Cat;
 }(Animal));
 new Cat("Matta", 2, "Male", "medium", "Images/rusianjpg.jpg", true, "Russian Blue", "Grey", "https://en.wikipedia.org/wiki/Russian_Blue");
-new Cat("Lilly", 7, "Female", "medium", "Images/mediumcat.jpg", false, "Siamese", "Beige-grey", "https://en.wikipedia.org/wiki/Siamese_cat");
-new Cat("Leo", 3, "Male", "medium", "Images/sphynx.jpg", true, "Sphynx", "White", "https://en.wikipedia.org/wiki/Sphynx_cat");
+new Cat("Lilly", 7, "Female", "medium", "Images/siamese.jpg", false, "Siamese", "Beige-grey", "https://en.wikipedia.org/wiki/Siamese_cat");
+new Cat("Leo", 3, "Male", "medium", "Images/sphynx0.jpg", true, "Sphynx", "White", "https://en.wikipedia.org/wiki/Sphynx_cat");
 //child class Dog
 var Dog = /** @class */ (function (_super) {
     __extends(Dog, _super);
@@ -70,10 +70,16 @@ var Dog = /** @class */ (function (_super) {
         return _this;
     }
     Dog.prototype.startDisplay = function () {
-        return "".concat(_super.prototype.startDisplay.call(this), "\n              <p class=\"card-text\">Breed: ").concat(this.dogBreed, "</p>\n              <p class=\"card-text\">Training: ").concat(this.training, "</p>\n            </div>\n            </div>\n            </div>");
+        return "".concat(_super.prototype.startDisplay.call(this), "\n              <p class=\"card-text ps-2\">Breed: ").concat(this.dogBreed, "</p>\n              <p class=\"card-text ps-2\">Training: ").concat(this.training, "</p>\n            </div>\n            </div>\n            </div>");
     };
     return Dog;
 }(Animal));
 new Dog("Rocky", 32, "Male", "big", "Images/samoyed.jpg", true, "Samoyed", "Yes");
 new Dog("Dobby", 5, "Female", "big", "Images/Labrador.jpg", false, "Labrador", "No");
 new Dog("Wuk", 3, "Male", "big", "Images/husky.jpg", true, "Husky", "Yes");
+function allCard() {
+    animalShop.forEach(function (value) {
+        document.getElementById("row").innerHTML += value.display();
+    });
+}
+allCard();
