@@ -8,7 +8,7 @@ class Animal {  //1
     gender: string;
     size: string;
     img: string;    
-    vaccine?: boolean;
+    vaccine: boolean;
     
     constructor(name: string, age: number, gender: string, size: string, img:string, vaccine:boolean){
         this.name = name;
@@ -19,8 +19,24 @@ class Animal {  //1
         this.vaccine = vaccine;
         animalShop.push(this);
     }
-    displayAnimal() {
-        return `Hello there, My name is ${this.name} and I am  ${this.age}years old, and I am a ${this.gender}`
+    startDisplay() {
+        return `<div class="col mx-0">
+                    <div class="card shadow-lg mb-1" id="testtest" style="width: 18rem;">
+                        <img src="${this.img}" class="card-img-top" alt="...">
+                    <div class="card-body p-0">
+                        <h5 class="card-title text-center bg-dark text-light p-1">${this.name}</h5>
+                        <p class="card-text">Gender: ${this.gender}</p>
+                        <p class="card-text">Age: ${this.age}</p>
+                        <p class="card-text">Size: ${this.size}</p>
+                        <p class="card-text text-center btn d-flex justify-content-center bg-${this.vaccine?"success":"danger"}">Vaccine ${this.vaccine}</p>`
+    }
+    endDisplay(){
+        return `</div>
+                </div>
+                </div>`
+    }
+    display(){
+        return this.startDisplay() + this.endDisplay();
     }
 }
 new Animal("Koko", 1, "male", "small", "Images/cocktoo.jpg", false);
@@ -41,7 +57,14 @@ class Cat extends Animal {  //2
         this.furColor = furColor;
         this.URLbreed = URLbreed;
     }
-    
+    startDisplay() {
+        return `${super.startDisplay()}
+        <hr>
+        <div class="card-text">
+            <p>Breed: ${this.breed} <br> Fur color: ${this.furColor} <br></p>
+            <a href="${this.URLbreed}" class="catlink">More info about the breed</a>
+        </div>`;
+    }   
 }
 
 new Cat ("Matta", 2, "Male", "medium",  "Images/rusianjpg.jpg", true, "Russian Blue", "Grey", "https://en.wikipedia.org/wiki/Russian_Blue");
@@ -50,13 +73,22 @@ new Cat ("Leo", 3, "Male", "medium", "Images/sphynx.jpg", true, "Sphynx", "White
 
 //child class Dog
 class Dog extends Animal {
-    family: string;
+    dogBreed: string;
     training: string;
 
-    constructor(name: string, age: number, gender: string, size: string, img:string, vaccine:boolean,family: string, training: string){
+    constructor(name: string, age: number, gender: string, size: string, img:string, vaccine:boolean,dogBreed: string, training: string){
         super(name, age, gender, size, img,vaccine)
-        this.family = family;
+        this.dogBreed = dogBreed;
         this.training = training;
+    }
+
+    startDisplay() {
+        return `${super.startDisplay()}
+              <p class="card-text">Breed: ${this.dogBreed}</p>
+              <p class="card-text">Training: ${this.training}</p>
+            </div>
+            </div>
+            </div>`
     }
 }
 
