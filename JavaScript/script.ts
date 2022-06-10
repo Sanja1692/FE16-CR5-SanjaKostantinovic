@@ -1,1 +1,3 @@
-let n1: number=4;
+class Animal {
+    
+}

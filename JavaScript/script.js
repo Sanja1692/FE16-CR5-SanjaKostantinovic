@@ -1,1 +1,5 @@
-var n1 = 4;
+var Animal = /** @class */ (function () {
+    function Animal() {
+    }
+    return Animal;
+}());
