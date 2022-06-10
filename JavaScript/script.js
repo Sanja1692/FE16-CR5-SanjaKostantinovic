@@ -26,14 +26,8 @@ var Animal = /** @class */ (function () {
         this.vaccine = vaccine;
         animalShop.push(this);
     }
-    Animal.prototype.startDisplay = function () {
-        return "<div class=\"col mx-0 mt-3\">\n                    <div class=\"card shadow-lg mb-1\" id=\"testtest\"\">\n                        <img src=\"".concat(this.img, "\" class=\"card-img-top\" alt=\"...\">\n                    <div class=\"card-body p-0\">\n                        <h5 class=\"card-title text-center bg-dark text-light p-1\">").concat(this.name, "</h5>\n                        <p class=\"card-text ps-2\">Gender: ").concat(this.gender, "</p>\n                        <p class=\"card-text ps-2\">Age: ").concat(this.age, "</p>\n                        <p class=\"card-text ps-2\">Size: ").concat(this.size, "</p>\n                        <p class=\"card-text text-center mb-2 text-light btn rounded-pill d-flex vaccine justify-content-center bg-").concat(this.vaccine ? "success" : "danger", "\">Vaccine ").concat(this.vaccine, "</p>");
-    };
-    Animal.prototype.endDisplay = function () {
-        return "</div>\n                </div>\n                </div>";
-    };
     Animal.prototype.display = function () {
-        return this.startDisplay() + this.endDisplay();
+        return "<div class=\"col mx-0 mt-3\">\n                    <div class=\"card shadow-lg mb-1\" id=\"testtest\"\">\n                        <img src=\"".concat(this.img, "\" class=\"card-img-top\" alt=\"...\">\n                    <div class=\"card-body p-0\">\n                        <h5 class=\"card-title text-center bg-dark text-light p-1\">").concat(this.name, "</h5>\n                        <p class=\"card-text ps-2\">Gender: ").concat(this.gender, "</p>\n                        <p class=\"card-text ps-2\">Age: ").concat(this.age, "</p>\n                        <p class=\"card-text ps-2\">Size: ").concat(this.size, "</p>\n                        <p class=\"card-text text-center mb-2 text-light btn rounded-pill d-flex vaccine justify-content-center bg-").concat(this.vaccine ? "success" : "danger", "\">Vaccine ").concat(this.vaccine, "</p>\n     </div>\n                </div>\n                </div>");
     };
     return Animal;
 }());
@@ -52,8 +46,8 @@ var Cat = /** @class */ (function (_super) {
         _this.URLbreed = URLbreed;
         return _this;
     }
-    Cat.prototype.startDisplay = function () {
-        return "".concat(_super.prototype.startDisplay.call(this), "\n                <div class=\"card-text ps-2\">\n            <p>Breed: ").concat(this.breed, " <br> Fur color: ").concat(this.furColor, " <br></p>\n            <a href=\"").concat(this.URLbreed, "\" class=\"infoLink\">More info about the breed</a>\n        </div>");
+    Cat.prototype.display = function () {
+        return "<div class=\"col mx-0 mt-3\">\n        <div class=\"card shadow-lg mb-1\" id=\"testtest\"\">\n            <img src=\"".concat(this.img, "\" class=\"card-img-top\" alt=\"...\">\n        <div class=\"card-body p-0\">\n            <h5 class=\"card-title text-center bg-dark text-light p-1\">").concat(this.name, "</h5>\n            <p class=\"card-text ps-2\">Gender: ").concat(this.gender, "</p>\n            <p class=\"card-text ps-2\">Age: ").concat(this.age, "</p>\n            <p class=\"card-text ps-2\">Size: ").concat(this.size, "</p>\n            <p class=\"card-text text-center mb-2 text-light btn rounded-pill d-flex vaccine justify-content-center bg-").concat(this.vaccine ? "success" : "danger", "\">Vaccine ").concat(this.vaccine, "</p>\n                <div class=\"card-text ps-2\">\n            <p>Breed: ").concat(this.breed, " <br> Fur color: ").concat(this.furColor, " <br></p>\n            <a href=\"").concat(this.URLbreed, "\" class=\"infoLink\">More info about the breed</a>\n        </div></div>\n        </div>");
     };
     return Cat;
 }(Animal));
@@ -69,8 +63,8 @@ var Dog = /** @class */ (function (_super) {
         _this.training = training;
         return _this;
     }
-    Dog.prototype.startDisplay = function () {
-        return "".concat(_super.prototype.startDisplay.call(this), "\n              <p class=\"card-text ps-2\">Breed: ").concat(this.dogBreed, "</p>\n              <p class=\"card-text ps-2\">Training: ").concat(this.training, "</p>\n            </div>\n            </div>\n            </div>");
+    Dog.prototype.display = function () {
+        return "<div class=\"col mx-0 mt-3\">\n        <div class=\"card shadow-lg mb-1\" id=\"testtest\"\">\n            <img src=\"".concat(this.img, "\" class=\"card-img-top\" alt=\"...\">\n        <div class=\"card-body p-0\">\n            <h5 class=\"card-title text-center bg-dark text-light p-1\">").concat(this.name, "</h5>\n            <p class=\"card-text ps-2\">Gender: ").concat(this.gender, "</p>\n            <p class=\"card-text ps-2\">Age: ").concat(this.age, "</p>\n            <p class=\"card-text ps-2\">Size: ").concat(this.size, "</p>\n            <p class=\"card-text text-center mb-2 text-light btn rounded-pill d-flex vaccine justify-content-center bg-").concat(this.vaccine ? "success" : "danger", "\">Vaccine ").concat(this.vaccine, "</p>\n              <p class=\"card-text ps-2\">Breed: ").concat(this.dogBreed, "</p>\n              <p class=\"card-text ps-2\">Training: ").concat(this.training, "</p>\n            </div>\n            </div>\n            </div>");
     };
     return Dog;
 }(Animal));

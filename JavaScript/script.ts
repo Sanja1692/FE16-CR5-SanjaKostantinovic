@@ -19,7 +19,7 @@ class Animal {  //1
         this.vaccine = vaccine;
         animalShop.push(this);
     }
-    startDisplay() {
+    display() {
         return `<div class="col mx-0 mt-3">
                     <div class="card shadow-lg mb-1" id="testtest"">
                         <img src="${this.img}" class="card-img-top" alt="...">
@@ -28,16 +28,12 @@ class Animal {  //1
                         <p class="card-text ps-2">Gender: ${this.gender}</p>
                         <p class="card-text ps-2">Age: ${this.age}</p>
                         <p class="card-text ps-2">Size: ${this.size}</p>
-                        <p class="card-text text-center mb-2 text-light btn rounded-pill d-flex vaccine justify-content-center bg-${this.vaccine?"success":"danger"}">Vaccine ${this.vaccine}</p>`
-    }
-    endDisplay(){
-        return `</div>
+                        <p class="card-text text-center mb-2 text-light btn rounded-pill d-flex vaccine justify-content-center bg-${this.vaccine?"success":"danger"}">Vaccine ${this.vaccine}</p>
+     </div>
                 </div>
                 </div>`
     }
-    display(){
-        return this.startDisplay() + this.endDisplay();
-    }
+    
 }
 new Animal("Koko", 1, "male", "small", "Images/cocktoo.jpg", false);
 new Animal("Rayan", 5, "female", "medium", "Images/R_Boa.jpg", true);
@@ -57,11 +53,20 @@ class Cat extends Animal {  //2
         this.furColor = furColor;
         this.URLbreed = URLbreed;
     }
-    startDisplay() {
-        return `${super.startDisplay()}
+    display() {
+        return `<div class="col mx-0 mt-3">
+        <div class="card shadow-lg mb-1" id="testtest"">
+            <img src="${this.img}" class="card-img-top" alt="...">
+        <div class="card-body p-0">
+            <h5 class="card-title text-center bg-dark text-light p-1">${this.name}</h5>
+            <p class="card-text ps-2">Gender: ${this.gender}</p>
+            <p class="card-text ps-2">Age: ${this.age}</p>
+            <p class="card-text ps-2">Size: ${this.size}</p>
+            <p class="card-text text-center mb-2 text-light btn rounded-pill d-flex vaccine justify-content-center bg-${this.vaccine?"success":"danger"}">Vaccine ${this.vaccine}</p>
                 <div class="card-text ps-2">
             <p>Breed: ${this.breed} <br> Fur color: ${this.furColor} <br></p>
             <a href="${this.URLbreed}" class="infoLink">More info about the breed</a>
+        </div></div>
         </div>`;
     }   
 }
@@ -81,8 +86,16 @@ class Dog extends Animal {
         this.training = training;
     }
 
-    startDisplay() {
-        return `${super.startDisplay()}
+    display() {
+        return `<div class="col mx-0 mt-3">
+        <div class="card shadow-lg mb-1" id="testtest"">
+            <img src="${this.img}" class="card-img-top" alt="...">
+        <div class="card-body p-0">
+            <h5 class="card-title text-center bg-dark text-light p-1">${this.name}</h5>
+            <p class="card-text ps-2">Gender: ${this.gender}</p>
+            <p class="card-text ps-2">Age: ${this.age}</p>
+            <p class="card-text ps-2">Size: ${this.size}</p>
+            <p class="card-text text-center mb-2 text-light btn rounded-pill d-flex vaccine justify-content-center bg-${this.vaccine?"success":"danger"}">Vaccine ${this.vaccine}</p>
               <p class="card-text ps-2">Breed: ${this.dogBreed}</p>
               <p class="card-text ps-2">Training: ${this.training}</p>
             </div>
