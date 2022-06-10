@@ -91,9 +91,28 @@ class Dog extends Animal {
     }
 }
 
-new Dog ("Rocky", 32, "Male", "big", "Images/samoyed.jpg", true, "Samoyed", "Yes");
+new Dog ("Rocky", 8, "Male", "big", "Images/samoyed.jpg", true, "Samoyed", "Yes");
 new Dog ("Dobby", 5, "Female", "big", "Images/Labrador.jpg", false, "Labrador", "No");
 new Dog ("Wuk", 3, "Male", "big", "Images/husky.jpg", true, "Husky", "Yes");
+
+(document.getElementById("sortOld") as HTMLElement).addEventListener("click", sortAge);
+
+function sortAge(){
+    animalShop.sort(function(a, b){
+        return a.age - b.age});
+    (document.getElementById("row") as HTMLElement).innerHTML ="";
+    allCard();
+
+};
+(document.getElementById("sortJung") as HTMLElement).addEventListener("click", sortAgeJung);
+
+function sortAgeJung(){
+    animalShop.sort(function(a, b){
+        return b.age - a.age});
+    (document.getElementById("row") as HTMLElement).innerHTML ="";
+    allCard();
+
+};
 
 function allCard(){
     animalShop.forEach((value) => {

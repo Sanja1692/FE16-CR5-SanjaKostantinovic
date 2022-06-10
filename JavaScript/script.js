@@ -74,9 +74,27 @@ var Dog = /** @class */ (function (_super) {
     };
     return Dog;
 }(Animal));
-new Dog("Rocky", 32, "Male", "big", "Images/samoyed.jpg", true, "Samoyed", "Yes");
+new Dog("Rocky", 8, "Male", "big", "Images/samoyed.jpg", true, "Samoyed", "Yes");
 new Dog("Dobby", 5, "Female", "big", "Images/Labrador.jpg", false, "Labrador", "No");
 new Dog("Wuk", 3, "Male", "big", "Images/husky.jpg", true, "Husky", "Yes");
+document.getElementById("sortOld").addEventListener("click", sortAge);
+function sortAge() {
+    animalShop.sort(function (a, b) {
+        return a.age - b.age;
+    });
+    document.getElementById("row").innerHTML = "";
+    allCard();
+}
+;
+document.getElementById("sortJung").addEventListener("click", sortAgeJung);
+function sortAgeJung() {
+    animalShop.sort(function (a, b) {
+        return b.age - a.age;
+    });
+    document.getElementById("row").innerHTML = "";
+    allCard();
+}
+;
 function allCard() {
     animalShop.forEach(function (value) {
         document.getElementById("row").innerHTML += value.display();
