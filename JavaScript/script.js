@@ -27,7 +27,7 @@ var Animal = /** @class */ (function () {
         animalShop.push(this);
     }
     Animal.prototype.startDisplay = function () {
-        return "<div class=\"col mx-0 mt-3\">\n                    <div class=\"card shadow-lg mb-1\" id=\"testtest\"\">\n                        <img src=\"".concat(this.img, "\" class=\"card-img-top\" alt=\"...\">\n                    <div class=\"card-body p-0\">\n                        <h5 class=\"card-title text-center bg-dark text-light p-1\">").concat(this.name, "</h5>\n                        <p class=\"card-text ps-2\">Gender: ").concat(this.gender, "</p>\n                        <p class=\"card-text ps-2\">Age: ").concat(this.age, "</p>\n                        <p class=\"card-text ps-2\">Size: ").concat(this.size, "</p>\n                        <p class=\"card-text text-center mb-2 text-light btn rounded-pill d-flex justify-content-center bg-").concat(this.vaccine ? "success" : "danger", "\">Vaccine ").concat(this.vaccine, "</p>");
+        return "<div class=\"col mx-0 mt-3\">\n                    <div class=\"card shadow-lg mb-1\" id=\"testtest\"\">\n                        <img src=\"".concat(this.img, "\" class=\"card-img-top\" alt=\"...\">\n                    <div class=\"card-body p-0\">\n                        <h5 class=\"card-title text-center bg-dark text-light p-1\">").concat(this.name, "</h5>\n                        <p class=\"card-text ps-2\">Gender: ").concat(this.gender, "</p>\n                        <p class=\"card-text ps-2\">Age: ").concat(this.age, "</p>\n                        <p class=\"card-text ps-2\">Size: ").concat(this.size, "</p>\n                        <p class=\"card-text text-center mb-2 text-light btn rounded-pill d-flex vaccine justify-content-center bg-").concat(this.vaccine ? "success" : "danger", "\">Vaccine ").concat(this.vaccine, "</p>");
     };
     Animal.prototype.endDisplay = function () {
         return "</div>\n                </div>\n                </div>";
@@ -95,6 +95,10 @@ function sortAgeJung() {
     allCard();
 }
 ;
+// (document.getElementById("vaccine") as HTMLElement).addEventListener("click", vaccineTorF);
+// function vaccineTorF(){
+//     document.getElementById("vaccine").style.backgroundColor = "green";
+// }
 function allCard() {
     animalShop.forEach(function (value) {
         document.getElementById("row").innerHTML += value.display();

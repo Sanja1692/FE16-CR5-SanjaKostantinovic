@@ -28,7 +28,7 @@ class Animal {  //1
                         <p class="card-text ps-2">Gender: ${this.gender}</p>
                         <p class="card-text ps-2">Age: ${this.age}</p>
                         <p class="card-text ps-2">Size: ${this.size}</p>
-                        <p class="card-text text-center mb-2 text-light btn rounded-pill d-flex justify-content-center bg-${this.vaccine?"success":"danger"}">Vaccine ${this.vaccine}</p>`
+                        <p class="card-text text-center mb-2 text-light btn rounded-pill d-flex vaccine justify-content-center bg-${this.vaccine?"success":"danger"}">Vaccine ${this.vaccine}</p>`
     }
     endDisplay(){
         return `</div>
@@ -113,6 +113,12 @@ function sortAgeJung(){
     allCard();
 
 };
+
+// (document.getElementById("vaccine") as HTMLElement).addEventListener("click", vaccineTorF);
+
+// function vaccineTorF(){
+//     document.getElementById("vaccine").style.backgroundColor = "green";
+// }
 
 function allCard(){
     animalShop.forEach((value) => {

@@ -52,3 +52,9 @@ body {
 .bgBlue {
     background-color: #4B95BA;
 }
+
+@media (min-width: 480px) and (max-width: 760px) {
+    .card-img-top {
+        display: none !important;
+    }
+}
