@@ -91,11 +91,12 @@ function sortAgeJung() {
 ;
 // (document.getElementById("vaccine") as HTMLElement).addEventListener("click", vaccineTorF);
 // function vaccineTorF(){
-//     document.getElementById("vaccine").style.backgroundColor = "green";
+//     (document.getElementById("vaccine") as HTMLElement).classList.add("bg-success");
 // }
 function allCard() {
     animalShop.forEach(function (value) {
         document.getElementById("row").innerHTML += value.display();
     });
 }
+// vaccineTorF();
 allCard();

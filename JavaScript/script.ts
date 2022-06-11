@@ -130,7 +130,7 @@ function sortAgeJung(){
 // (document.getElementById("vaccine") as HTMLElement).addEventListener("click", vaccineTorF);
 
 // function vaccineTorF(){
-//     document.getElementById("vaccine").style.backgroundColor = "green";
+//     (document.getElementById("vaccine") as HTMLElement).classList.add("bg-success");
 // }
 
 function allCard(){
@@ -138,4 +138,5 @@ function allCard(){
         (document.getElementById("row") as HTMLElement).innerHTML += value.display();
     });
 }
+// vaccineTorF();
 allCard();
